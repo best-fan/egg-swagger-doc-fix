@@ -19,6 +19,17 @@
 ```bash
 $ npm i egg-swagger-doc --save
 ```
+## Add
+```js
+1、增加基础路径配置：   baseUrl: '/driver/', //基础路径 默认为:'/''
+// 例如 域名地址为：http://127.0.0.1:7001/driver/swagger-ui.html   
+// baseUrl需要配置为'/driver/',
+
+exports.swaggerdoc = {
+ baseUrl: '/driver/', 
+  ....
+}
+```
 
 ## Usage
 
@@ -28,6 +39,12 @@ exports.swaggerdoc = {
   enable: true,
   package: 'egg-swagger-doc',
 };
+```
+## 新增配置
+```js
+exports.swaggerdoc = {
+    baseUrl: '/', //基础路径
+}
 ```
 
 ## Configuration

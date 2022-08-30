@@ -1,6 +1,6 @@
 {
-  "name": "egg-swagger-doc",
-  "version": "2.3.2",
+  "name": "egg-swagger-doc-fixbug",
+  "version": "2.3.3",
   "description": "swagger for egg",
   "eggPlugin": {
     "name": "swaggerdoc"
@@ -8,7 +8,8 @@
   "keywords": [
     "egg",
     "eggPlugin",
-    "egg-plugin"
+    "egg-plugin",
+    "egg-swagger-doc"
   ],
   "dependencies": {
     "koa-static-cache": "^5.1.2"
@@ -28,7 +29,7 @@
     "node": ">=8.0.0"
   },
   "scripts": {
-    "test": "npm run lint -- --fix && egg-bin pkgfiles && npm run test-local",
+    "test": " egg-bin pkgfiles && npm run test-local",
     "test-local": "egg-bin test",
     "cov": "egg-bin cov",
     "lint": "eslint .",
@@ -37,22 +38,22 @@
     "autod": "autod"
   },
   "files": [
-    "app.js",
-    "config",
     "app",
-    "lib"
+    "lib",
+    "config",
+    "app.js"
   ],
   "ci": {
     "version": "8, 9"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ysj291823/egg-swagger-doc.git"
+    "url": "git+https://github.com/best-fan/egg-swagger-doc-fix.git"
   },
   "bugs": {
-    "url": "https://github.com/Ysj291823/egg-swagger-doc/issues"
+    "url": "https://github.com/best-fan/egg-swagger-doc-fix/issues"
   },
-  "homepage": "https://github.com/Ysj291823/egg-swagger-doc#readme",
-  "author": "yanshijie",
+  "homepage": "https://github.com/best-fan/egg-swagger-doc-fix#readme",
+  "author": "fanfuda",
   "license": "MIT"
 }

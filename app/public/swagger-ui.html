@@ -4,6 +4,7 @@
   <head>
     <meta charset="UTF-8">
     <title>Swagger UI</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Source+Code+Pro:300,600|Titillium+Web:400,600,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./swagger-ui.css" >
     <link rel="icon" type="image/png" href="./favicon-32x32.png" sizes="32x32" />
     <link rel="icon" type="image/png" href="./favicon-16x16.png" sizes="16x16" />
@@ -32,14 +33,25 @@
 
   <body>
     <div id="swagger-ui"></div>
-
     <script src="./swagger-ui-bundle.js"> </script>
     <script src="./swagger-ui-standalone-preset.js"> </script>
     <script>
+      function getQuery(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+          var pair = vars[i].split('=');
+          if (pair[0] == variable) {
+            return pair[1];
+          }
+        }
+        return false;
+      }
     window.onload = function() {
-      // Begin Swagger UI call region
+      const baseUrl=getQuery('baseUrl')
+      // Build a system
       const ui = SwaggerUIBundle({
-        url: "/swagger-doc",
+        url: baseUrl+"swagger-doc",
         dom_id: '#swagger-ui',
         deepLinking: true,
         presets: [
@@ -51,7 +63,6 @@
         ],
         layout: "StandaloneLayout"
       })
-      // End Swagger UI call region
 
       window.ui = ui
     }

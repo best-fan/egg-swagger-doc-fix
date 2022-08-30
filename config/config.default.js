@@ -5,6 +5,7 @@
  * @member Config#swagger-doc
  * @property {String} dirScanner - 插件扫描的文档路径
  * @property {String} basePath - api前置路由
+ * @property {String} baseUrl - 基础路径
  * @property {Object} apiInfo - 可参考Swagger文档中的Info
  * @property {Array[String]} apiInfo - 可参考Swagger文档中的Info
  * @property {Array[String]} schemes - 访问地址协议http或者https
@@ -18,6 +19,7 @@
 exports.swaggerdoc = {
   dirScanner: './app/controller',
   basePath: '/',
+    baseUrl: '/', //基础路径
   apiInfo: {
     title: 'egg-swagger',
     description: 'swagger-ui for egg js api',
